@@ -1,0 +1,13 @@
+INVITACIÓN DIGITAL · LUIS FERNANDO & ANY CLARISSA
+
+Cómo abrir:
+1. Extrae el ZIP.
+2. Abre la carpeta invitacion_luis_any_interactiva.
+3. Abre index.html con Chrome.
+
+Para compartir por WhatsApp:
+- Sube el contenido de esta carpeta a un servicio de alojamiento web estático y comparte el enlace resultante.
+- El ZIP por sí solo no es un enlace web público.
+
+Incluye 8 páginas con las imágenes originales sin retocar ni reescribir, navegación anterior/siguiente, puntos de página, menú, gesto de deslizar en móvil y hojas/esporas sutiles.
+No se agregó música porque no se proporcionó un archivo de audio. Las imágenes disponibles no incluyen una página separada de itinerario, así que no se inventó una.
