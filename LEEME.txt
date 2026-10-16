@@ -1,0 +1,9 @@
+INVITACIÓN DIGITAL · LUIS FERNANDO & ANY CLARISSA
+
+El ZIP contiene index.html, musica.mp3 y las 9 imágenes juntas en la misma carpeta raíz. No muevas ni renombres esos archivos.
+
+Cómo abrir: extrae el ZIP completo y abre index.html en Chrome. Para publicarla en GitHub Pages, sube todos los archivos juntos al mismo nivel.
+
+La música se repite en bucle. En celulares, el navegador puede bloquear la reproducción hasta que la persona toque la portada o el botón ♫. El botón ♫ permite pausar y reanudar.
+
+Incluye 9 páginas, navegación por flechas, puntos y deslizamiento táctil, transiciones suaves y hojas decorativas sutiles. Las imágenes se usan tal como fueron enviadas.
