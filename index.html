@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5efdf">
+<meta name="description" content="Invitación digital de boda de Luis Fernando y Any Clarissa">
+<title>Nuestra boda · Luis Fernando & Any Clarissa</title>
+<style>
+:root{--green:#77866a;--sage:#aab39a;--gold:#c7a75f;--cream:#fbf6e9;--ink:#354332}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;background:radial-gradient(ellipse at 50% 42%,#fffdf6 0%,#f5efdf 64%,#e9e0cb 100%);color:var(--ink);font-family:Georgia,serif}
+body{overflow:hidden;display:flex;align-items:center;justify-content:center}
+.app{width:100%;height:100%;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;padding:10px 10px max(10px,env(safe-area-inset-bottom))}
+.topbar{width:min(100%,520px);display:flex;align-items:center;justify-content:center;padding:3px 2px 9px;z-index:4;color:#6d795f;position:relative}
+.brand{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;opacity:.9}
+.iconbtn{border:1px solid #c7a75f99;background:#fffaf0dd;color:#647456;border-radius:50%;width:38px;height:38px;font-size:18px;display:grid;place-items:center;cursor:pointer;box-shadow:0 3px 12px #82724b18;backdrop-filter:blur(8px)}
+#musicBtn{position:absolute;right:2px;top:0}
+.book{position:relative;width:min(100%,520px);height:min(calc(100dvh - 130px),900px);max-height:calc(100dvh - 130px);aspect-ratio:9/16;display:flex;align-items:center;justify-content:center;perspective:1000px;filter:drop-shadow(0 12px 22px #8b7c5c25);isolation:isolate}
+.page{position:absolute;inset:0;border-radius:10px;overflow:hidden;background:#fbf6e9;transform-origin:center center;backface-visibility:hidden;opacity:0;pointer-events:none;transform:translateY(8px) scale(.975);filter:blur(2px);transition:opacity .85s ease,transform 1.15s cubic-bezier(.22,.75,.25,1),filter .85s ease;box-shadow:inset 0 0 0 1px #d8c79e,0 0 0 5px #fffaf0aa,0 0 0 6px #c7a75f66}
+.page.active{opacity:1;pointer-events:auto;transform:translateY(0) scale(1);filter:blur(0);z-index:2}
+.page img{display:block;width:100%;height:100%;object-fit:contain;background:#fbf6e9}
+.hotspot{position:absolute;z-index:3;display:block;left:12%;top:36.8%;width:76%;height:6.2%;border-radius:30px;background:transparent;outline-offset:3px}.hotspot:focus-visible{outline:2px solid #c6a45b;background:#c6a45b18}
+.page::after{content:"";position:absolute;inset:0;border-radius:10px;pointer-events:none;box-shadow:inset 0 0 22px #a18c5b12,inset 0 0 0 1px #ffffff80}
+.nav{width:min(100%,520px);display:flex;align-items:center;justify-content:center;gap:22px;padding-top:11px;z-index:4}
+.navbtn{width:42px;height:42px;border-radius:50%;border:1px solid #c7a75f99;background:linear-gradient(145deg,#fffdf6,#eee5d1);color:#69785c;font-size:25px;line-height:1;cursor:pointer;box-shadow:0 4px 13px #89774b18;transition:transform .2s ease,background .2s ease}.navbtn:active{transform:scale(.92)}
+.navbtn:disabled{opacity:.22;cursor:default}
+.dots{display:none}
+.counter{font:10px/1.5 Arial,sans-serif;letter-spacing:1.8px;text-transform:uppercase;color:#8b8c70;text-align:center;padding-top:5px;z-index:4}
+.progress{position:absolute;top:0;left:0;height:2px;background:var(--gold);width:0;transition:width .3s;z-index:10}
+.leaf-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:3}
+.leaf{position:absolute;top:-10vh;opacity:0;color:#b9a46a;text-shadow:0 1px 5px #f9edcf55;animation:fall linear infinite}
+.leaf:nth-child(3n){color:#aab39a}.leaf:nth-child(4n){color:#e5d7b6}
+@keyframes fall{0%{transform:translate3d(0,-8vh,0) rotate(0deg);opacity:0}10%{opacity:.48}85%{opacity:.34}100%{transform:translate3d(var(--drift),115vh,0) rotate(300deg);opacity:0}}
+.hint{font:10px Arial,sans-serif;color:#9a967e;letter-spacing:.5px;text-align:center;margin-top:4px}
+@media(min-width:700px){.app{padding:16px}.book{height:min(calc(100dvh - 155px),900px)}}
+@media(max-height:600px){.app{padding:3px 8px}.topbar{padding-bottom:4px}.iconbtn{width:31px;height:31px}.book{height:calc(100dvh - 100px);max-height:calc(100dvh - 100px)}.nav{padding-top:4px;gap:15px}.navbtn{height:34px;width:34px}.counter{padding-top:2px}.hint{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div><div class="leaf-layer" id="leaves" aria-hidden="true"></div>
+<audio id="music" src="musica.mp3" loop preload="auto"></audio>
+<main class="app">
+<header class="topbar"><div class="brand">Nuestra boda · L & A</div><button class="iconbtn" id="musicBtn" aria-label="Reproducir música" title="Música" aria-pressed="false">♫</button></header>
+<div class="book" id="book" aria-label="Libro de invitación de boda">
+<section class="page active" data-title="Portada"><img src="01-portada.png" alt="Portada de la invitación de boda"></section>
+<section class="page" data-title="Bienvenidos"><img src="02-bienvenidos.png" alt="Página de bienvenida"></section>
+<section class="page" data-title="Nuestra historia"><img src="03-nuestra-historia.png" alt="Nuestra historia"></section>
+<section class="page" data-title="Itinerario"><img src="04-itinerario.png" alt="Itinerario de la boda"></section>
+<section class="page" data-title="Ceremonia y recepción"><img src="05-ceremonia-recepcion.png" alt="Detalles de la ceremonia y recepción"></section>
+<section class="page" data-title="Un amor que crece"><img src="06-foto.png" alt="Fotografía de la pareja"></section>
+<section class="page" data-title="Código de vestimenta"><img src="07-vestimenta.png" alt="Código de vestimenta"></section>
+<section class="page" data-title="Regalos"><img src="08-regalos.png" alt="Información de regalos"></section>
+<section class="page" data-title="Confirmación"><img src="09-confirmacion.png" alt="Confirmación de asistencia"><a class="hotspot" href="https://wa.me/50496883184?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Luis%20Fernando%20y%20Any%20Clarissa." target="_blank" rel="noopener" aria-label="Confirmar asistencia por WhatsApp" title="Confirmar asistencia por WhatsApp"></a></section>
+</div>
+<nav class="nav" aria-label="Navegación de páginas"><button class="navbtn" id="prev" aria-label="Página anterior" title="Anterior">‹</button><button class="navbtn" id="next" aria-label="Página siguiente" title="Siguiente">›</button></nav>
+<div class="counter" id="counter" aria-live="polite">PORTADA · 1 / 9</div><div class="hint">Desliza para descubrir cada página</div>
+</main>
+<script>
+(()=>{
+const pages=[...document.querySelectorAll('.page')],names=pages.map(p=>p.dataset.title),prev=document.getElementById('prev'),next=document.getElementById('next'),counter=document.getElementById('counter'),progress=document.getElementById('progress');let current=0,startX=0,startY=0;
+function go(n){current=Math.max(0,Math.min(pages.length-1,n));pages.forEach((p,i)=>{p.classList.toggle('active',i===current);p.setAttribute('aria-hidden',i===current?'false':'true')});prev.disabled=current===0;next.disabled=current===pages.length-1;counter.textContent=names[current].toLocaleUpperCase('es')+' · '+(current+1)+' / '+pages.length;progress.style.width=((current+1)/pages.length*100)+'%';document.title=names[current]+' · Luis Fernando & Any Clarissa'}
+prev.addEventListener('click',()=>{playMusic();go(current-1)});next.addEventListener('click',()=>{playMusic();go(current+1)});
+const book=document.getElementById('book');book.addEventListener('touchstart',e=>{startX=e.changedTouches[0].clientX;startY=e.changedTouches[0].clientY},{passive:true});book.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX,dy=e.changedTouches[0].clientY-startY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.2){playMusic();go(current+(dx<0?1:-1))}},{passive:true});document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(current+1);if(e.key==='ArrowLeft')go(current-1);if(e.key==='Home')go(0);if(e.key==='End')go(pages.length-1)});
+const layer=document.getElementById('leaves'),symbols=['🍃','✦','❧','·','✧'];for(let i=0;i<17;i++){const el=document.createElement('span');el.className='leaf';el.textContent=symbols[i%symbols.length];el.style.left=(Math.random()*100)+'%';el.style.fontSize=(8+Math.random()*12)+'px';el.style.animationDuration=(12+Math.random()*18)+'s';el.style.animationDelay=(-Math.random()*25)+'s';el.style.setProperty('--drift',((Math.random()*24)-12)+'vw');layer.appendChild(el)}
+const music=document.getElementById('music'),musicBtn=document.getElementById('musicBtn');async function playMusic(){try{await music.play();musicBtn.textContent='♫';musicBtn.title='Pausar música';musicBtn.setAttribute('aria-label','Pausar música');musicBtn.setAttribute('aria-pressed','true');musicBtn.style.background='linear-gradient(145deg,#e9eedf,#fffaf0)'}catch(e){musicBtn.title='Toca para activar la música';musicBtn.setAttribute('aria-label','Activar música')}}function pauseMusic(){music.pause();musicBtn.textContent='♫';musicBtn.title='Activar música';musicBtn.setAttribute('aria-label','Activar música');musicBtn.setAttribute('aria-pressed','false');musicBtn.style.background='#fffaf0dd'}musicBtn.addEventListener('click',()=>music.paused?playMusic():pauseMusic());document.getElementById('book').addEventListener('pointerdown',()=>{if(music.paused)playMusic()});music.addEventListener('play',()=>{musicBtn.title='Pausar música';musicBtn.setAttribute('aria-pressed','true')});music.addEventListener('pause',()=>{musicBtn.title='Activar música';musicBtn.setAttribute('aria-pressed','false')});document.addEventListener('visibilitychange',()=>{if(!document.hidden&&music.paused)playMusic()});go(0);playMusic();
+})();
+</script>
+</body></html>
